@@ -14,7 +14,7 @@ def parse_book(book):
     dict_book = {"id": book.id, 
                  "title": book.title, 
                  "publish_date": book.publish_date,
-                 "avg_rating": book.avg_rating,
+                 "avg_rating": round(book.avg_rating, 2),
                  "num_rating": book.num_rating,
                  "authors":[{"name": author.name, "country": author.country} 
                             for author in book.author_ids]}
