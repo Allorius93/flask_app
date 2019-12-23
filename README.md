@@ -1,6 +1,6 @@
 This is a flask application with a basic 2-table database attached.   
 
-#### Database schema
+### Database schema
 Used tables described below with sqlalchemy syntax.
 
 ```python
@@ -30,21 +30,21 @@ class Author(db.Model):
 We have many-to-many relationship between books and authors, so we need to create intermediary table, which will store connections. 
 
 
-#### On requirements
+### On requirements
 
 File requirements.txt describes python libraries needed to run application. If you are not using postgreSQL installing psycopg2 labrary should fail. In this case exclude it from requirements file. 
 
-#### Configuration
+### Configuration
 
 Application configuration stored in flask_cfg.py. It mainly describes database type and connection. Relevant parameters:
 
-BASE_TYPE - database type to connect to. By default postgresql+psycopg2
-POSTGRES_URL - host:port to connect to
-POSTGRES_USER - name of the database user with appropriate rights
-POSTGRES_PW - password to the POSTGRES_USER
-POSTGRES_DB - name of production database
+- BASE_TYPE - database type to connect to. By default postgresql+psycopg2
+- POSTGRES_URL - host:port to connect to
+- POSTGRES_USER - name of the database user with appropriate rights
+- POSTGRES_PW - password to the POSTGRES_USER
+- POSTGRES_DB - name of production database
 
-#### Run application
+### Run application
 
 To launch application do the following from main application directory:
 
@@ -70,7 +70,7 @@ flask command resetdb
 flask run
 ```
 
-#### Additional commands
+### Additional commands
 
 If is also possible to drop database or fill it with dummy test data:
 
@@ -79,7 +79,7 @@ flask command dropdb
 flask command filldb
 ```
 
-#### API
+### API
 
 Application api is coded in project/blueprint.py. All commands below(described in python code):
 
@@ -103,7 +103,7 @@ requests.post("http://127.0.0.1:5000/books/api/v1.0/books", json={"title":"Bad o
 # Create new book in the database. Request json must contain title, publish_date and author_ids fields. author_ids must be int or list with existing author id. Otherwise app will return exception, but won't fail.
 ```
 
-#### Run test
+### Run test
 
 Test should be run after registering application on environment variable. After this is done, to run test use following command in application directory:
 
